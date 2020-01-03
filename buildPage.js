@@ -4,7 +4,7 @@ const util = require("util");
 // Globals
 const publicDir = "public/";
 const partialDir = "partial/";
-const contentDir = "partial/content/";
+const contentDir = "content/";
 const partials = {};
 let partialsLoaded;
 
@@ -21,21 +21,34 @@ const getHeadWithTitle = (headStr, title) => {
   ].join("");
 };
 
-// load partial in partials obj
-const loadParAsync = async file => {
+// get par file contents
+const getParAsync = file => {
   const path = [partialDir, file, ".par"].join("");
-  try {
-    partials[file] = await readFile(path, "utf-8");
-  } catch (err) {
-    console.error("readFile Failed:\n", err);
-  }
+  return readFile(path, "utf-8");
 };
 
+// load partial in partials obj
+// const loadParAsync = async file => {
+//   const path = [partialDir, file, ".par"].join("");
+//   try {
+//     partials[file] = await readFile(path, "utf-8");
+//   } catch (err) {
+//     console.error("readFile Failed:\n", err);
+//   }
+// };
+
 const loadAllParAsync = async () => {
-  getHeadWithTitle(await loadPar("head"), "Title from DB");
-  await loadPar("nav");
-  await loadPar("footer");
-  partialsLoaded = true;
+  try {
+    partials.head = getHeadWithTitle(
+      await getParAsync("head"),
+      "Title from DB"
+    );
+    partials.nav = await getParAsync("nav");
+    partials.footer = await getParAsync("footer");
+    partialsLoaded = true;
+  } catch (err) {
+    console.error("loadAllParAsync Failed:\n", err);
+  }
 };
 
 const sliceExt = file => file.slice(0, file.lastIndexOf("."));
@@ -46,6 +59,10 @@ const readContentAsync = htmlFile => {
 };
 
 const buildPageAsync = async file => {
+  if (!partialsLoaded) {
+    await loadAllParAsync();
+  }
+
   try {
     const html =
       partials.head +
@@ -61,3 +78,5 @@ const buildPageAsync = async file => {
     console.error("buildPage Failed:\n", err);
   }
 };
+
+module.exports = buildPageAsync;

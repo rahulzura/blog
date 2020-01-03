@@ -2,3 +2,5 @@ node_modules/
 public/
 partial/
 notes/
+content/
+cssandjs/
