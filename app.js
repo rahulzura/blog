@@ -17,7 +17,7 @@ app.use(serveStatic("cssandjs", { index: false }));
 
 // Globals
 const hostname = "127.0.0.1";
-const port = NODE_ENV ? PORT : 3000;
+const port = process.env.NODE_ENV ? PORT : 3000;
 
 app.get("/", (req, res) => {
   res.sendFile("public/index.html", { root: __dirname });
