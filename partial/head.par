@@ -1,0 +1,14 @@
+<head>
+  <?title --text/>
+  <meta
+    name="description"
+    content="Home page of rahulzura's blog, it shows links of recent posts and a starting point from which the whole blog can be explored."
+  />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <script src="../js/script.js"></script>
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+    rel="stylesheet"
+  />
+</head>

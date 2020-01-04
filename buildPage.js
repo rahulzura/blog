@@ -64,11 +64,17 @@ const buildPageAsync = async file => {
   }
 
   try {
-    const html =
-      partials.head +
-      partials.nav +
-      (await readContentAsync(file)) +
-      partials.footer;
+    const html = [
+      "<!DOCTYPE html><html>",
+      partials.head,
+      "<body>",
+      partials.nav,
+      '<main class="content">',
+      await readContentAsync(file),
+      "</main>",
+      partials.footer,
+      "</body></html>"
+    ].join("");
 
     // return promise
     return writeFile(publicDir + file, html, err => {

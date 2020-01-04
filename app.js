@@ -1,5 +1,4 @@
 const fs = require("fs");
-const http = require("http");
 
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -28,6 +27,7 @@ app.get("/blog/:post", (req, res) => {
   const post = req.params.post;
   buildPage(post);
   res.sendFile("public/" + post, { root: __dirname });
+  console.log("sent a post");
 });
 
 app.get("/content/:post", (req, res) => {
