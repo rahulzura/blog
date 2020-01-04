@@ -19,9 +19,10 @@
   --h1-size: var(--px-value-xx-large);
   --h2-size: var(--px-value-x-large);
   --h3-size: var(--px-value-large);
-  --h4-size: var(--px-value-medium);
+  --h4-size: var(--px-value-l-medium);
+  --content-p: var(--px-value-l-medium);
   --margin-top: 1.5em 0 0 0;
-  --margin-p: var(--px-value-small) 0;
+  --margin-p: var(--px-value-s-medium) 0;
 }
 
 /* Base */
@@ -31,8 +32,8 @@
   border: 0;
   outline: 0;
   font-size: 100%;
-  font-family: "Open Sans", "Helvetica", "Times New Roman", "Courier New",
-    Courier, "Arial", sans-serif;
+  font-family: "Roboto", "Times New Roman", "Helvetica", "Courier New", Courier,
+    "Arial", sans-serif;
   vertical-align: baseline;
   background: transparent;
   box-sizing: border-box;
@@ -51,15 +52,15 @@ a {
 
 /* BEM */
 body {
-  background: #f5f5f5;
+  background: #fefefe;
 }
 
 /* Navigation */
 .nav {
-  background: var(--color-yellowish);
+  background: var(--color-light-brownish);
   text-align: center;
   padding: var(--px-value-l-medium) 0;
-  box-shadow: 0px 1px 20px 2px #ddd;
+  box-shadow: 0px 1px 4px 1px #ddd;
 }
 
 .nav__item,
@@ -70,7 +71,7 @@ body {
 
 .nav__item a,
 .nav__item--selected a {
-  color: var(--color-crem);
+  color: var(--color-cream);
 }
 
 .nav__item--selected a {
@@ -83,6 +84,8 @@ body {
 }
 
 .content__h2 {
+  color: var(--color-light-brownish);
+  font-weight: 100;
   font-size: var(--h2-size);
   margin: var(--margin-top);
 }
@@ -95,18 +98,19 @@ body {
 .content__h4 {
   font-size: var(--h4-size);
   margin: var(--margin-top);
+  font-weight: 100;
 }
 
 .content__p {
   font-weight: 100;
-  font-size: 1.05em;
+  font-size: var(--content-p);
   line-height: 1.5em;
   margin: var(--margin-p);
 }
 
 .code {
   font-family: "Courier New", Courier, monospace;
-  background: #ddd;
+  background: #eee;
   font-weight: 100;
 }
 
@@ -123,7 +127,8 @@ body {
 
 /* Footer */
 .footer {
-  background: var(--color-whitish);
+  background: var(--color-smoky-black);
+  color: var(--color-cream);
   padding: var(--px-value-large) var(--px-value-xx-large);
 }
 
