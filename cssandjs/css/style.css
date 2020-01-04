@@ -1,0 +1,132 @@
+/* Variables */
+:root {
+  --color-smoky-black: #160908;
+  --color-light-brownish: #54442b;
+  --color-cream: #fbe6d6;
+  --color-yellowish: #f7ee7f;
+  --color-whitish: #e0e2db;
+  --color-pale-blue: #a0ced9;
+  --color-lemon-cream: #fcf5c7;
+  --px-value-xx-large: 40px;
+  --px-value-x-large: 32px;
+  --px-value-large: 24px;
+  --px-value-l-medium: 20px;
+  --px-value-medium: 16px;
+  --px-value-s-medium: 12px;
+  --px-value-small: 8px;
+  --px-value-x-small: 4px;
+  --content-padding: var(--px-value-medium);
+  --h1-size: var(--px-value-xx-large);
+  --h2-size: var(--px-value-x-large);
+  --h3-size: var(--px-value-large);
+  --h4-size: var(--px-value-medium);
+  --margin-top: 1.5em 0 0 0;
+  --margin-p: var(--px-value-small) 0;
+}
+
+/* Base */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  font-family: "Open Sans", "Helvetica", "Times New Roman", "Courier New",
+    Courier, "Arial", sans-serif;
+  vertical-align: baseline;
+  background: transparent;
+  box-sizing: border-box;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* BEM */
+body {
+  background: #f5f5f5;
+}
+
+/* Navigation */
+.nav {
+  background: var(--color-yellowish);
+  text-align: center;
+  padding: var(--px-value-l-medium) 0;
+  box-shadow: 0px 1px 20px 2px #ddd;
+}
+
+.nav__item,
+.nav__item--selected {
+  display: inline-block;
+  padding: 0 var(--px-value-medium);
+}
+
+.nav__item a,
+.nav__item--selected a {
+  color: var(--color-crem);
+}
+
+.nav__item--selected a {
+  font-weight: 700;
+}
+
+/* Content */
+.content {
+  padding: var(--content-padding);
+}
+
+.content__h2 {
+  font-size: var(--h2-size);
+  margin: var(--margin-top);
+}
+
+.content__h3 {
+  font-size: var(--h3-size);
+  margin: var(--margin-top);
+}
+
+.content__h4 {
+  font-size: var(--h4-size);
+  margin: var(--margin-top);
+}
+
+.content__p {
+  font-weight: 100;
+  font-size: 1.05em;
+  line-height: 1.5em;
+  margin: var(--margin-p);
+}
+
+.code {
+  font-family: "Courier New", Courier, monospace;
+  background: #ddd;
+  font-weight: 100;
+}
+
+.pre {
+  background: #111;
+  margin: var(--margin-top);
+  border-radius: var(--px-value-small);
+}
+
+.pre .code {
+  color: #eee;
+  background: transparent;
+}
+
+/* Footer */
+.footer {
+  background: var(--color-whitish);
+  padding: var(--px-value-large) var(--px-value-xx-large);
+}
+
+.footer__copyright {
+  font-size: 0.9em;
+}
