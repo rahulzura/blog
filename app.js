@@ -42,7 +42,7 @@ app.get("/content/:post", (req, res) => {
     }
 
     if (files.find(item => item === post)) {
-      fs.readFile(["content/", post].join(""), "utf-8", (err, data) => {
+      fs.readFile(["posts/", post].join(""), "utf-8", (err, data) => {
         if (err) {
           console.error(err);
           res.status(500).send("something broke");

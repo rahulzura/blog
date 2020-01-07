@@ -6,7 +6,9 @@
   />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/prism.css" />
   <script src="../js/script.js"></script>
+  <script src="../js/prism.js"></script>
   <link
     href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
     rel="stylesheet"
@@ -54,15 +56,12 @@
   <li class="content__li">
     <h3 class="content__h3">Installation</h3>
     <h4 class="content__h4">
-      1. Using Ubuntu's <code class="code">apt</code> package manager
+      Using Ubuntu's <code class="code">apt</code> package manager
     </h4>
 
     <pre class="pre">
-<code class="code">
-  sudo apt update
-  sudo apt install mysql-server
-</code>
-</pre>
+<code class="language-bash">sudo apt update
+sudo apt install mysql-server</code></pre>
     <p class="content__p">
       This will install MySQL from software repositories managed by Ubuntu
       (Debian if you are using a Debian), you can see a list of repositories
