@@ -1,15 +1,20 @@
 const fs = require("fs");
 const util = require("util");
 
+const mdParser = require("./md-parser");
+
 // Globals
 const publicDir = "public/";
 const partialDir = "partial/";
-const contentDir = "content/";
+const postsDir = "content/posts/";
 const partials = {};
 let partialsLoaded;
 
+// Promisify readFile and writefile
 const readFile = util.promisify(fs.readFile);
 const writeFile = util.promisify(fs.writeFile);
+
+// it adds title in the head and returns it
 const getHeadWithTitle = (headStr, title) => {
   const tpl = "<?title --text/>";
   const titleEt = ["<title>", title, "</title>"].join("");
@@ -27,22 +32,10 @@ const getParAsync = file => {
   return readFile(path, "utf-8");
 };
 
-// load partial in partials obj
-// const loadParAsync = async file => {
-//   const path = [partialDir, file, ".par"].join("");
-//   try {
-//     partials[file] = await readFile(path, "utf-8");
-//   } catch (err) {
-//     console.error("readFile Failed:\n", err);
-//   }
-// };
-
+// load all par files in partials obj and set partialsLoaded to true
 const loadAllParAsync = async () => {
   try {
-    partials.head = getHeadWithTitle(
-      await getParAsync("head"),
-      "Title from DB"
-    );
+    partials.head = await getParAsync("head");
     partials.nav = await getParAsync("nav");
     partials.footer = await getParAsync("footer");
     partialsLoaded = true;
@@ -51,33 +44,45 @@ const loadAllParAsync = async () => {
   }
 };
 
-const sliceExt = file => file.slice(0, file.lastIndexOf("."));
-
-const readContentAsync = htmlFile => {
-  // return promise
-  return readFile([contentDir + sliceExt(htmlFile) + ".par"].join(""), "utf-8");
+// remove extension
+const sliceExt = file => {
+  const ext = file.slice(file.lastIndexOf("."));
+  if (ext === ".html" || ext === ".htm") {
+    return file.slice(0, file.lastIndexOf("."));
+  } else return file;
 };
 
+// takes file name and writes the file in public folder by adding par and md
 const buildPageAsync = async file => {
   if (!partialsLoaded) {
     await loadAllParAsync();
   }
 
+  const md = await readFile([postsDir, sliceExt(file), ".md"].join("")).catch(
+    err => {
+      console.error("READFILE FAILED:\n", err);
+      return -1;
+    }
+  );
+  if (md === -1) return -1;
+  const { html, meta } = mdParser(md);
+  console.log(html, meta);
+
   try {
-    const html = [
+    const post = [
       "<!DOCTYPE html><html>",
-      partials.head,
+      getHeadWithTitle(partials.head, meta.title),
       "<body>",
       partials.nav,
       '<main class="content">',
-      await readContentAsync(file),
+      html,
       "</main>",
       partials.footer,
       "</body></html>"
     ].join("");
 
     // return promise
-    return writeFile(publicDir + file, html, err => {
+    return writeFile([publicDir, file, ".html"].join(""), html, err => {
       throw err;
     });
   } catch (err) {
@@ -85,4 +90,26 @@ const buildPageAsync = async file => {
   }
 };
 
-module.exports = buildPageAsync;
+// takes mdHtml and meta and returns complete html post
+const getHtml = async (mdHtml, meta) => {
+  if (!partialsLoaded) {
+    await loadAllParAsync();
+  }
+
+  const post = [
+    "<!DOCTYPE html><html>",
+    getHeadWithTitle(partials.head, meta.title),
+    "<body>",
+    partials.nav,
+    '<main class="content">',
+    mdHtml,
+    "</main>",
+    partials.footer,
+    "</body></html>"
+  ].join("");
+
+  // return promise
+  return post;
+};
+
+module.exports = { buildPageAsync: buildPageAsync, getHtml };
