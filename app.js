@@ -1,19 +1,18 @@
-const fs = require("fs");
-
 const express = require("express");
 const bodyParser = require("body-parser");
 const serveStatic = require("serve-static");
 const cors = require("cors");
 
-const buildPage = require("./buildPage.js");
+const { buildPageAsync } = require("./buildPage.js");
+console.log(buildPageAsync);
 
 const app = express();
 
 app.use(cors());
 app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 app.use(bodyParser.json({ limit: "50mb" }));
-// app.use(serveStatic("public", { index: false }));
-app.use(serveStatic("cssandjs", { index: false }));
+app.use(serveStatic("public", { index: false }));
+app.use(serveStatic("cssjs", { index: false }));
 
 // Globals
 const hostname = "127.0.0.1";
@@ -23,35 +22,15 @@ app.get("/", (req, res) => {
   res.sendFile("public/index.html", { root: __dirname });
 });
 
-app.get("/blog/:post", (req, res) => {
+app.get("/blog/:post", async (req, res) => {
   const post = req.params.post;
-  buildPage(post);
-  res.sendFile("public/" + post, { root: __dirname });
-  console.log("sent a post");
-});
-
-app.get("/content/:post", (req, res) => {
-  const post = req.params.post;
-  console.log("got a content req");
-
-  fs.readdir("content", (err, files) => {
-    if (err) {
-      console.error(err);
-      res.status(500).send("something broke");
-      return -1;
-    }
-
-    if (files.find(item => item === post)) {
-      fs.readFile(["posts/", post].join(""), "utf-8", (err, data) => {
-        if (err) {
-          console.error(err);
-          res.status(500).send("something broke");
-          return -1;
-        }
-        res.send(JSON.stringify(data));
-      });
-    }
-  });
+  if ((await buildPageAsync(post)) === -1) {
+    res.sendFile("public/not-found.html", { root: __dirname });
+    return;
+  } else {
+    res.sendFile("public/" + post, { root: __dirname });
+    console.log("sent a post");
+  }
 });
 
 const server = app.listen(port, () => {
