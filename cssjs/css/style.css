@@ -17,12 +17,12 @@
   --px-value-small: 8px;
   --px-value-x-small: 4px;
   --content-padding: var(--px-value-medium);
-  --h1-size: 2.5rem;
+  --h1-size: 2.4rem;
   --h2-size: 2rem;
   --h3-size: 1.5rem;
   --h4-size: 1.25rem;
   --content-p: 1.1rem;
-  --margin-top: 1.5em 0 0 0;
+  --margin-top: 1.4em 0 0 0;
   --margin-p: var(--px-value-s-medium) 0;
 }
 
@@ -53,22 +53,62 @@ a {
 
 /* BEM */
 body {
-  background: var(--color-light-brownish);
-  color: var(--color-cream);
+  background: #fdfdfd;
+  color: #444;
+  min-height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
 }
 
 /* Navigation */
 .nav {
-  padding: var(--px-value-large) 0;
-  /* box-shadow: 0px 1px 4px 1px #ddd; */
+  height: 4rem;
+  width: 100%;
+  overflow: hidden;
+  align-items: center;
+  box-shadow: 0px 1px 4px 1px #eee;
+  /* box-shadow: 0px 0px 10px 1px var(--color-cream); */
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
+  background-color: #fdfdfd;
+}
+
+.home {
+  height: 30px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  margin: 0 16rem 0 0;
+  overflow: hidden;
+}
+
+.logo-container {
+  height: 2rem;
+  width: 2rem;
+  margin: 0 0.5rem 0 0;
+}
+
+.logo {
+  height: 100%;
+  width: 100%;
+  border-radius: 10%;
+}
+
+.my-name {
+  font-size: 1.1em !important;
+  font-weight: 600 !important;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 .nav__item,
 .nav__item--selected {
-  display: inline-block;
   padding: 0 var(--px-value-medium);
 }
 
@@ -76,6 +116,7 @@ body {
 .nav__item--selected a {
   color: inherit;
   font-weight: 500;
+  color: #555;
 }
 
 .nav__item--selected a {
@@ -85,8 +126,10 @@ body {
 /* Content */
 .content {
   padding: var(--content-padding);
+  padding-top: 100px; /*for nav*/
   max-width: 768px;
   margin: 0 auto;
+  flex-grow: 1;
 }
 
 h1,
@@ -98,8 +141,16 @@ h6 {
   font-weight: 500;
 }
 
+h1 {
+  font-weight: 900;
+  font-size: var(--h1-size);
+  text-align: center;
+  padding: 0 4rem;
+}
+
 h2 {
   font-size: var(--h2-size);
+  color: var(--color-light-brownish);
   margin: var(--margin-top);
 }
 
@@ -107,6 +158,7 @@ h3 {
   font-weight: 700;
   font-size: var(--h3-size);
   margin: var(--margin-top);
+  color: black;
 }
 
 h4 {

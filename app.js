@@ -3,9 +3,6 @@ const bodyParser = require("body-parser");
 const serveStatic = require("serve-static");
 const cors = require("cors");
 
-const { buildPageAsync } = require("./buildPage.js");
-console.log(buildPageAsync);
-
 const app = express();
 
 app.use(cors());
@@ -15,22 +12,14 @@ app.use(serveStatic("public", { index: false }));
 app.use(serveStatic("cssjs", { index: false }));
 
 // Globals
-const hostname = "127.0.0.1";
 const port = process.env.NODE_ENV === "production" ? process.env.PORT : 3000;
 
 app.get("/", (req, res) => {
   res.sendFile("public/index.html", { root: __dirname });
 });
 
-app.get("/blog/:post", async (req, res) => {
-  const post = req.params.post;
-  if ((await buildPageAsync(post)) === -1) {
-    res.sendFile("public/not-found.html", { root: __dirname });
-    return;
-  } else {
-    res.sendFile("public/" + post, { root: __dirname });
-    console.log("sent a post");
-  }
+app.get("/:", async (req, res) => {
+  res.sendFile("public/not-found.html", { root: __dirname });
 });
 
 const server = app.listen(port, () => {
