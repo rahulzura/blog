@@ -224,19 +224,20 @@ p {
   margin: var(--p-margin);
 }
 
-.code {
+code {
   font-family: "Courier New", Courier, monospace;
   background: #eee;
   font-weight: 100;
 }
 
-.pre {
+pre {
+  padding: 1rem;
   background: #111;
   margin-top: var(--rel-margin-top);
   border-radius: var(--value-small);
 }
 
-.pre .code {
+pre code {
   color: #eee;
   background: transparent;
 }
