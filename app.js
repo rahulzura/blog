@@ -8,6 +8,7 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 app.use(bodyParser.json({ limit: "50mb" }));
+app.use(serveStatic("logo", { index: false }));
 app.use(serveStatic("public", { index: false }));
 app.use(serveStatic("cssjs", { index: false }));
 
