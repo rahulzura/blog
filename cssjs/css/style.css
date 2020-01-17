@@ -279,10 +279,6 @@ pre code {
     --rel-font-size: 1.2em;
   }
 
-  .nav {
-    padding: 0 0.85em;
-  }
-
   .nav__item {
     padding: 0 0.8em;
   }
@@ -323,10 +319,6 @@ pre code {
 
   h1 {
     padding: 0 2em;
-  }
-
-  .nav {
-    padding: 0;
   }
 }
 
