@@ -260,15 +260,14 @@ pre code {
 /* Footer */
 .footer {
   width: 100%;
-  background: var(--color-smoky-black);
-  color: var(--color-cream);
+  background: var(--color-cream);
 }
 
 .footer__content {
   font-size: 0.8em;
   width: 100%;
   margin: 0 auto;
-  padding: var(--value-medium) var(--content-padding);
+  padding: var(--value-l-medium) var(--content-padding);
   max-width: var(--content-max-width);
 }
 
