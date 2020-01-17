@@ -262,11 +262,14 @@ pre code {
   width: 100%;
   background: var(--color-smoky-black);
   color: var(--color-cream);
-  padding: var(--value-large) var(--value-xx-large);
 }
 
-.footer__copyright {
-  font-size: 0.6em;
+.footer__content {
+  font-size: 0.8em;
+  width: 100%;
+  margin: 0 auto;
+  padding: var(--value-medium) var(--content-padding);
+  max-width: var(--content-max-width);
 }
 
 /* xx-small - 240px */
