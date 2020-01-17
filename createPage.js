@@ -54,7 +54,11 @@ const createPage = (mdFilePath, publicDir) => {
   } else {
     const pageHtml = [
       "<!DOCTYPE html><html>",
-      parseIncludes(pars.head, "<?title --text/>", getTitleEle(meta.title)),
+      parseIncludes(
+        parseIncludes(pars.head, "<?title --text/>", getTitleEle(meta.title)),
+        "<?Description/>",
+        getDesEle(meta.description ? meta.description : meta.title)
+      ),
       "<body>",
       pars.nav,
       '<main class="content">',

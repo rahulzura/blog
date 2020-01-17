@@ -4,6 +4,7 @@ title: "Rahul Kumar"
 template: page
 thumbnail: "../thumbnails/grunt.png"
 slug: "index"
+description: "Homepage of Rahul Kumar's blog"
 ---
 
 # Latest Articles
