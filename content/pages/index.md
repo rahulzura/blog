@@ -2,7 +2,7 @@
 date: 2020-01-16
 title: "Rahul Kumar"
 template: page
-thumbnail: "../thumbnails/grunt.png"
+thumbnail: ""
 slug: "index"
 description: "Homepage of Rahul Kumar's blog"
 ---

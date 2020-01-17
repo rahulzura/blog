@@ -4,6 +4,7 @@ title: "Articles"
 template: page
 thumbnail: ""
 slug: "articles"
+description: "List of articles"
 ---
 
 # Latest Articles
