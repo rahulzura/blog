@@ -100,7 +100,7 @@ body {
   font-size: 0.8em;
   height: var(--nav-container-height);
   background: var(--body-background);
-  box-shadow: 0px 12px 24px -16px #ddd;
+  box-shadow: 1px 6px 12px -4px rgba(0, 0, 0, 0.1);
 }
 
 .nav {
