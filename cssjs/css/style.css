@@ -26,7 +26,7 @@
   --body-background: #fdfdfd;
 
   /* class */
-  --nav-container-height: 2.5em;
+  --nav-container-height: 2.8em;
   --content-padding: var(--value-medium);
   --content-max-width: 48em;
 
@@ -58,6 +58,7 @@ li {
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 /* BEM */
@@ -84,19 +85,29 @@ body {
   width: 100%;
 }
 
+.content a {
+  /* color: var(--color-light-brownish); */
+  border-bottom: 2px solid var(--color-cream);
+  box-shadow: 0px -8px 4px -6px var(--color-cream) inset;
+}
+
+.content a:hover {
+  color: black;
+}
+
 /* Navigation */
 .nav-container {
-  font-size: 0.85em;
+  font-size: 0.8em;
   height: var(--nav-container-height);
   background: var(--body-background);
-  box-shadow: 0px 1px 4px 1px #eee;
+  box-shadow: 0px 12px 24px -16px #ddd;
 }
 
 .nav {
   /* dimentions */
   height: inherit;
   max-width: var(--content-max-width);
-  padding: 0 1.6em;
+  padding: 0 var(--content-padding);
 
   /* positioning */
   margin: 0 auto;
@@ -110,15 +121,17 @@ body {
 
 .nav__item {
   flex: 0 1 auto;
-  padding: 0 0.4em;
+  padding: 0 0.5em;
 }
 
 .nav__item--home {
   flex-grow: 1;
+  padding-left: 0 !important;
 }
 
 .nav__item a {
-  color: #555;
+  color: #666;
+  font-size: 0.9em;
 }
 
 .home-link-container {
@@ -151,6 +164,7 @@ body {
   font-weight: 600 !important;
   font-family: Arial, Helvetica, sans-serif;
   margin-left: 0.5rem;
+  color: #333;
 
   /* to make height of text equal to lesser than font-size to align it nicely*/
   line-height: 0.8;
@@ -227,6 +241,7 @@ p {
 code {
   font-family: "Courier New", Courier, monospace;
   background: #eee;
+  color: black;
   font-weight: 100;
 }
 
@@ -251,7 +266,7 @@ pre code {
 }
 
 .footer__copyright {
-  font-size: 0.8em;
+  font-size: 0.6em;
 }
 
 /* xx-small - 240px */
@@ -262,6 +277,14 @@ pre code {
 @media all and (min-width: 20em) {
   :root {
     --rel-font-size: 1.2em;
+  }
+
+  .nav {
+    padding: 0 0.85em;
+  }
+
+  .nav__item {
+    padding: 0 0.8em;
   }
 }
 
@@ -284,11 +307,11 @@ pre code {
 @media all and (min-width: 33.75em) {
   :root {
     --rel-font-size: 1.4em;
-    --nav-container-height: 3.3em;
+    --nav-container-height: 3em;
   }
 
-  .nav-container {
-    font-size: 0.7em;
+  .nav__item {
+    padding: 0 1em;
   }
 }
 
@@ -300,6 +323,10 @@ pre code {
 
   h1 {
     padding: 0 2em;
+  }
+
+  .nav {
+    padding: 0;
   }
 }
 
