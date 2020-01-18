@@ -1,0 +1,93 @@
+.intro {
+  --color-cream: #fbe6d6;
+  --color-light-brownish: #54442b;
+  background-color: #eee;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.intro__dp {
+  height: 100px;
+  width: 100px;
+  margin: 0 auto;
+  background-color: #888;
+  border: 1px solid #888;
+  border-radius: 5px;
+}
+
+.intro__text {
+  text-align: center;
+}
+
+.intro__dp img {
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.clear {
+  clear: both;
+}
+
+/* xx-small - 240px */
+@media all and (min-width: 15em) {
+}
+
+/* Extra Small - 320px*/
+@media all and (min-width: 20em) {
+  .intro__dp {
+    height: 120px;
+    width: 120px;
+  }
+}
+
+/* little Small - 480px*/
+@media all and (min-width: 30em) {
+  .intro__dp {
+    height: 140px;
+    width: 140px;
+    float: right;
+    margin-left: 15px;
+  }
+
+  .intro__text {
+    text-align: left;
+  }
+}
+
+/* Small - 540px*/
+@media all and (min-width: 33.75em) {
+  .intro__text {
+    font-size: 1.1em;
+  }
+}
+
+/* Medium - 768px*/
+@media all and (min-width: 48em) {
+  .intro__dp {
+    height: 160px;
+    width: 160px;
+  }
+}
+
+/* Large - 1024px*/
+@media all and (min-width: 64em) {
+  .intro__dp {
+    height: 200px;
+    width: 200px;
+  }
+}
+
+/* Extra Large - 1366px*/
+@media all and (min-width: 85.375em) {
+}
+
+/* Extra Extra Large - 1920px */
+@media all and (min-width: 120em) {
+}
+
+/* Retina - 2560px */
+@media all and (min-width: 160em) and (min-resolution: 192dpi) {
+}

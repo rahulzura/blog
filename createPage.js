@@ -3,7 +3,10 @@ const fs = require("fs");
 const showdown = require("showdown");
 const yaml = require("js-yaml");
 
-const conv = new showdown.Converter({ metadata: true });
+const conv = new showdown.Converter({
+  metadata: true,
+  parseImgDimension: true
+});
 
 // Globals
 const contentDir = [__dirname, "/content"].join("");
@@ -65,6 +68,7 @@ const createPage = (mdFilePath, publicDir) => {
       html,
       "</main>",
       pars.footer,
+      meta.css ? `<link rel="stylesheet" href="css/${meta.css}"/>` : "",
       "</body></html>"
     ].join("");
     fs.writeFileSync([publicDir, "/", meta.slug, ".html"].join(""), pageHtml);
