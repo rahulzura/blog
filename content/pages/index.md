@@ -11,7 +11,6 @@ js: "index.js"
 
 <div class="intro">
 	<div class="intro__dp">
-		<img id="dp" alt="My display picture"/>
 	</div>
 	<div class="intro__text">
 		<p><strong>Hey, I'm Rahul</strong>. I'm a full stack web developer, based in India. Below are some projects and articles by me.</p>

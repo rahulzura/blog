@@ -1,5 +1,10 @@
 window.onload = () => {
-  const dp = document.querySelector("#dp");
-  dp.setAttribute("src", "dp.jpg");
-  console.log(dp);
+  const introDpDiv = document.querySelector(".intro__dp");
+
+  const img = document.createElement("img");
+  img.setAttribute("src", "dp.jpg");
+  img.setAttribute("alt", "My display picture");
+
+  introDpDiv.appendChild(img);
+  console.log(img);
 };
