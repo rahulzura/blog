@@ -6,5 +6,4 @@ window.onload = () => {
   img.setAttribute("alt", "My display picture");
 
   introDpDiv.appendChild(img);
-  console.log(img);
 };
