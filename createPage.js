@@ -69,6 +69,7 @@ const createPage = (mdFilePath, publicDir) => {
       "</main>",
       pars.footer,
       meta.css ? `<link rel="stylesheet" href="css/${meta.css}"/>` : "",
+      meta.js ? `<script src="js/${meta.js}"></script>` : "",
       "</body></html>"
     ].join("");
     fs.writeFileSync([publicDir, "/", meta.slug, ".html"].join(""), pageHtml);
