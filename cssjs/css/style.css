@@ -61,6 +61,27 @@ a {
   color: inherit;
 }
 
+button {
+  text-decoration: none !important;
+  background-color: #222;
+  color: #f5f5f5;
+  border-radius: 6px;
+  font-size: 0.7em;
+  font-weight: 100;
+  padding: 8px;
+}
+
+button:hover {
+  text-decoration: none;
+  background-color: #111;
+  color: #fff;
+  cursor: pointer;
+}
+
+.clear {
+  clear: both;
+}
+
 /* BEM */
 ::selection {
   color: var(--color-smoky-black);
@@ -106,6 +127,7 @@ body {
 .nav {
   /* dimentions */
   height: inherit;
+  min-width: 220px;
   max-width: var(--content-max-width);
   padding: 0 var(--content-padding);
 
