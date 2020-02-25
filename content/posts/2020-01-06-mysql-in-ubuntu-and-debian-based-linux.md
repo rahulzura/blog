@@ -49,16 +49,14 @@ This will install MySQL from software repositories managed by Ubuntu (or Debian 
 
 4. `SHOW DATABASES` - to see all the databases on the mysql server host:
 
-5. To see all the tables in a database:
-   i. Switch to a database: `USE <database-name>`
-   ii. `SHOW TABLES;`
+5. To see all the tables in a database, switch to a database by `USE <database-name>` then `SHOW TABLES;`
 
-6. To see current database: `SELECT DATABASE();`
+6. To see current database - `SELECT DATABASE();`
 
-7. To see all the columns in a table: `DESCRIBE <table-name> or SHOW COLMUNS FROM <table-name>`
+7. To see all the columns in a table - `DESCRIBE <table-name> or SHOW COLMUNS FROM <table-name>`
 
-8. To check if mysql is running: `sudo systemctl status mysql or sudo service mysql status`
+8. To check if mysql is running - `sudo systemctl status mysql or sudo service mysql status`
 
-9. To stop mysql server: `sudo service mysql stop`
+9. To stop mysql server - `sudo service mysql stop`
 
-10. To start mysql server: `sudo service mysql start`
+10. To start mysql server - `sudo service mysql start`

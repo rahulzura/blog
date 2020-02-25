@@ -280,7 +280,8 @@ pre {
 }
 
 pre code {
-  font-size: 0.9em;
+  font-weight: 500;
+  font-size: 1.1em;
   color: #fff;
   background: transparent;
 }
