@@ -22,7 +22,7 @@
   --h2-size: 1.7em;
   --h3-size: 1.5em;
   --h4-size: 1.25em;
-  --p-margin: var(--value-s-medium) 0;
+  --p-margin: var(--value-small) 0 0 0;
   --body-background: #fdfdfd;
 
   /* class */
@@ -50,10 +50,12 @@
 }
 
 ul,
+ol {
+  padding-left: 20px;
+}
+
 li {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
+  list-style-position: outside;
 }
 
 a {
@@ -125,6 +127,8 @@ body {
 }
 
 .nav {
+  list-style-type: none;
+
   /* dimentions */
   height: inherit;
   min-width: 220px;
@@ -249,6 +253,7 @@ h3 {
 }
 
 h4 {
+  font-weight: 700;
   font-size: var(--h4-size);
   margin-top: var(--rel-margin-top);
 }
@@ -269,13 +274,14 @@ code {
 
 pre {
   padding: 1rem;
-  background: #111;
-  margin-top: var(--rel-margin-top);
+  background: #333;
   border-radius: var(--value-small);
+  margin: var(--value-small) 0;
 }
 
 pre code {
-  color: #eee;
+  font-size: 0.9em;
+  color: #fff;
   background: transparent;
 }
 

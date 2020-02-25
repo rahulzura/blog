@@ -51,7 +51,9 @@ const createPage = (mdFilePath, publicDir) => {
       html,
       "</main>",
       pars.footer,
-      '<link rel="stylesheet" href="css/prism.css" /><script src="js/prism.js"></script></body></html>'
+      meta.prism
+        ? '<link rel="stylesheet" href="css/prism.css" /><script src="js/prism.js"></script></body></html>'
+        : ""
     ].join("");
     fs.writeFileSync([publicDir, "/", meta.slug, ".html"].join(""), pageHtml);
   } else {
