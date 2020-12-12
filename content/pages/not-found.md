@@ -2,7 +2,7 @@
 date: 2020-01-16
 title: "404 - Page not found!"
 template: page
-slug: not-found
+slug: "404"
 ---
 
 # 404

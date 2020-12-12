@@ -21,7 +21,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/:", async (req, res) => {
-  res.sendFile("public/not-found.html", { root: __dirname });
+  res.sendFile("public/404.html", { root: __dirname });
 });
 
 const server = app.listen(port, () => {
