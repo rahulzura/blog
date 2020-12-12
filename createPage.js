@@ -12,6 +12,9 @@ const conv = new showdown.Converter({
 const contentDir = [__dirname, "/content"].join("");
 const parDir = [__dirname, "/partial"].join("");
 const publicDir = [__dirname, "/public"].join("");
+if (!fs.existsSync(publicDir)) {
+  fs.mkdirSync(publicDir);
+}
 const pars = {
   head: fs.readFileSync([parDir, "/head.par"].join(""), "utf-8"),
   nav: fs.readFileSync([parDir, "/nav.par"].join(""), "utf-8"),
