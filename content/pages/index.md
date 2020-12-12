@@ -27,7 +27,7 @@ js: "index.js"
 <div class="project-list">
 	<div class="project">
 		<div class="project__img-container">
-			<img src="code-n-share.png" alt="Code N Share Image"/>
+			<img src="images/code-n-share.png" alt="Code N Share Image"/>
 		</div>
 				<div class="project__links">
 			<a href="https://github.com/rahulzura/code-n-share"><button>Github</button></a>
@@ -43,7 +43,7 @@ js: "index.js"
   </div>
 	<div class="project">
 		<div class="project__img-container">
-			<img src="face-detector.png" alt="Face Detector Image" />
+			<img src="images/face-detector.png" alt="Face Detector Image" />
 		</div>
 				<div class="project__links">
 			<a href="https://github.com/rahulzura/face-detector"><button>Github</button></a>

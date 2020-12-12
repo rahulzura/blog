@@ -1,4 +1,5 @@
 const fs = require("fs");
+const fse = require("fs-extra");
 
 const showdown = require("showdown");
 const yaml = require("js-yaml");
@@ -14,6 +15,14 @@ const parDir = [__dirname, "/partial"].join("");
 const publicDir = [__dirname, "/public"].join("");
 if (!fs.existsSync(publicDir)) {
   fs.mkdirSync(publicDir);
+}
+try {
+  console.log("Copying static assets...")
+  fse.copySync(__dirname + '/cssjs', publicDir);
+  fse.copySync(__dirname + '/assets', publicDir);
+  console.log('Copied static assets!')
+} catch (err) {
+  console.error(err)
 }
 const pars = {
   head: fs.readFileSync([parDir, "/head.par"].join(""), "utf-8"),

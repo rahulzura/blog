@@ -86,7 +86,7 @@ const loadProjectList = projectList => {
 {
   /* <div class="intro">
     <div class="intro__dp">
-      <img src="dp.jpg" alt="My display picture">
+      <img src="images/dp.jpg" alt="My display picture">
     </div>
     <div class="intro__text">
         <p><strong>Hey, I'm Rahul</strong>. I'm a full stack web developer, based in India. Below are some projects and articles by me.</p>

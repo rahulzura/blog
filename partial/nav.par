@@ -5,7 +5,7 @@
         <a href="/" aria-label="Home">
           <div class="home-link">
             <div class="home-link__logo-container">
-              <img class="logo" alt="logo" src="logo.png" />
+              <img class="logo" alt="logo" src="logo/logo.png" />
             </div>
             <div class="home-link__my-name">Rahul Kumar</div>
           </div></a

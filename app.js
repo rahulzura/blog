@@ -11,7 +11,7 @@ app.use(bodyParser.json({ limit: "50mb" }));
 app.use(serveStatic("logo", { index: false }));
 app.use(serveStatic("public", { index: false }));
 app.use(serveStatic("cssjs", { index: false }));
-app.use(serveStatic("content/images", { index: false }));
+app.use(serveStatic("assets/images", { index: false }));
 
 // Globals
 const port = process.env.NODE_ENV === "production" ? process.env.PORT : 3000;
