@@ -4,7 +4,7 @@ slug: me
 template: page
 ---
 
-I'm <strong>Rahul Kumar</strong>, a full stack software developer, based in India. I am self-taught and I am a strong believer of technology changing our lives for the better <s>or worse</s>.
+I'm <strong>Rahul Kumar</strong>, a full stack software developer, based in India. I am a strong believer of technology changing our lives for the better <s>or worse</s>. I am a graduate of [Bachelor of Science in Information Technology (B. Sc. IT)](https://en.wikipedia.org/wiki/Bachelor_of_Science_in_Information_Technology).
 
 # Skills
 
