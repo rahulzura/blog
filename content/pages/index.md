@@ -37,7 +37,7 @@ js: "index.js"
 			Face Detector
 		</div>
 		<div class="project__description">
-			This app detects any faces in an image, built using React for UI and Node.js with Express.js for backend. It uses Clarifai Face Detection API to detect faces in the images. It is deployed on Heroku.
+			This app detects any faces in an image, built using React for UI and Node.js with Express.js for backend. It uses Clarifai Face Detection API to detect faces in the images.
 		</div>
 		<div class="clear"></div>
 	</div>
