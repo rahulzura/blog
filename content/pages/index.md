@@ -31,7 +31,7 @@ js: "index.js"
 		</div>
 				<div class="project__links">
 			<a href="https://github.com/rahulzura/face-detector"><button>Github</button></a>
-			<a href="https://face-square.herokuapp.com"><button>Launch</button></a>
+			<a href="https://face-square.netlify.app"><button>Launch</button></a>
 		</div>
 		<div class="project__heading">
 			Face Detector
